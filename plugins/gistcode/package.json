@@ -1,0 +1,19 @@
+{
+  "name": "hexo-plugin-gistcode",
+  "author": "WooLNinesun",
+  "description": "insert github gist code",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index",
+  "scripts": {},
+  "keywords": [
+    "hexo",
+    "gist",
+    "code"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "hexo": "^3.8.0"
+  }
+}

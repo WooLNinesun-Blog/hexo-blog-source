@@ -1,0 +1,90 @@
+---
+uuid: 692e20a8-5b2a-48ad-ab15-ee61072fd128
+title: LeetCode - longest-substring-without-repeating-characters
+tags:
+  - leetcode
+  - algorithms
+  - c++
+categories:
+  - LeetCode 刷題目
+series: LeetCode
+mathjax: true
+date: 2019-02-20 00:00:00
+updated: 2019-02-20 00:00:00
+---
+
+> Leetcode: [longest-substring-without-repeating-characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) {% label warning@Medium %}
+
+<!--more-->
+
+# [正文]
+Given a string, find the length of the {% label info@longest substring %} without repeating characters.
+
+{% codeblock example1 lang:plain line_number:false %}
+Input: "abcabcbb"
+Output: 3 
+Explanation: The answer is "abc", with the length of 3. 
+{% endcodeblock %}
+
+{% codeblock example2 lang:plain line_number:false %}
+Input: "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+{% endcodeblock %}
+
+{% codeblock example3 lang:plain line_number:false %}
+Input: "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3. 
+             Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+{% endcodeblock %}
+
+## 分析
+
+這題就是直接掃過去，維護兩個 R 和 L 這兩個 index，每次向右移動 R，表示讀入一個新字母，若讀入的字母 s[R] 前面有出現過則更新 L 的值，沒有則不更動。然後每次去比對 length 和 R-L+1(目前長度) 的大小來更新最大長度值。
+
+{% codeblock example lang:plain line_number:false %}
+length = max(length, R - L + 1) = 2
+a b a d c ...
+L R
+-------------------
+length = max(length, R - L + 1) = 2
+a b a d c ...
+  L R                                 // 因為 s[R] 出現過，更新 L 值
+-------------------
+length = max(length, R - L + 1) = 3
+a b a d c ...
+  L   R
+-------------------
+...
+-------------------
+length = max(length, R - L + 1) = 10
+... a b c d a ...
+      L     R                         // 雖然 s[R] 出現過，但 index 比 L 還小，不用更新 L
+{% endcodeblock %}
+
+確認的方式使用 hash 來存，這樣每次查詢就可以降到 $O(1)$，且因為字母的數值範圍是 [0, 255]，可以直接用陣列的方式去做 hash;
+
+## code
+{% codeblock lang:cpp line_number:true highlight:true first_line:1 %}
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        vector<int> hash(256);
+        
+        int length = 0, string_length = s.size();
+        for( int L = 0, R = 0; R < string_length; R++ ) {
+            L = max( hash[s[R]], L );
+            length = max( length, R - L + 1 );
+            hash[s[R]] = R + 1;
+        }
+        
+        return length;
+    }
+};
+{% endcodeblock %}
+
+{% note info %}
+1. `L = max( hash[s[R]], L );` 用來更新 L，如果前面沒出現過 hash[s[R]] = 0, 有出現過但 index 比 L 還小都不會更新到 L 的值;
+2. `hash[s[R]] = R + 1;` 更新 hash 值，R+1 是因為 L 要更新成出現過的字母的後面一個
+{% endnote %}

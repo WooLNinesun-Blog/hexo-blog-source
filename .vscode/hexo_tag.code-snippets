@@ -1,0 +1,38 @@
+{
+  "codeblock": {
+		"scope": "markdown",
+    "prefix": "codeblock",
+    "body": [
+      "{% codeblock title lang:language url link text line_number:true highlight:true first_line:1 mark:#,#-# %}",
+      "",
+      "{% endcodeblock %}"
+    ],
+    "description": "codeblock - full arguments"
+  },
+  "note": {
+		"scope": "markdown",
+    "prefix": "note",
+    "body": [
+      "{% note ${1|default,primary,success,info,warning,danger|} ${2:no-icon} %}",
+      "${0}",
+      "{% endnote %}"
+    ],
+    "description": "note"
+  },
+  "exturl": {
+		"scope": "markdown",
+    "prefix": "exturl",
+    "body": [
+      "{% exturl ${1:text} ${2:url} ${3:tip} %}${0}"
+    ],
+    "description": "exturl"
+  },
+  "label": {
+		"scope": "markdown",
+    "prefix": "label",
+    "body": [
+      "{% label ${1|default,primary,success,info,warning,danger|}@${2} %}${0}"
+    ],
+    "description": "label"
+  },
+}
