@@ -1,9 +1,9 @@
 ---
 uuid: 7a4db81b-eae1-4c20-a7cb-12dbc0cf7e37
-title: Create isolated Jupyterlab kernels with pyenv and virtualenv
+title: 使用 pyenv 建立獨立的 Jupyter kernels！
 tags: 
   - python
-  - jupyterlab
+  - jupyter
   - pyenv
   - virtualenv
 categories:

@@ -25,11 +25,13 @@ comments: false
 
 ## Leetcode
 
-練習 leetcode 的題目，寫完一題也會記錄思考過程來練習面試。
+練習 leetcode 的題目，一個禮拜寫兩題，同時記錄思考過程來練習面試。
 
 {% note default %}
 ### Algorithms
 * [Two Sum](/posts/0227db69-0a2a-4503-930b-7c7f959c4cbb)
 * [Add Two Numbers](/posts/a16b682f-53a9-4958-bb47-eba63c4e03e2)
 * [Longest Substring Without Repeating Characters](/posts/692e20a8-5b2a-48ad-ab15-ee61072fd128)
+* [Reverse Integer](/posts/fca5e203-2fe8-42d2-9e49-8baeb78e131c)
+* [Palindrome Number](/posts/ebbcf586-282e-4218-8979-d086ab4a05ba)
 {% endnote %}
