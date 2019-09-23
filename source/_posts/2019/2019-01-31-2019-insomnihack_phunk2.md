@@ -8,6 +8,7 @@ tags:
 categories:
   - Capture The Flag
   - Insomni'hack teaser 2019
+series: Insomni'hack teaser 2019
 date: 2019-01-31 00:00:00
 updated: 2019-01-31 00:00:00
 ---

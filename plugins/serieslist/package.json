@@ -1,0 +1,17 @@
+{
+  "name": "hexo-plugin-serieslist",
+  "author": "WooLNinesun",
+  "description": "list target series posts",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index",
+  "scripts": {},
+  "keywords": [
+    "hexo"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "hexo": "^3.8.0"
+  }
+}

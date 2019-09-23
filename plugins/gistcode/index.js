@@ -6,7 +6,7 @@ var gistcode = require('./gistcode');
 
 hexo.extend.tag.register('gistcode', function(args) {
   if (gistcode) {
-    return gistcode(hexo, args);
+    return gistcode(hexo || this, args);
   }
   return '';
 }, { async: true });
